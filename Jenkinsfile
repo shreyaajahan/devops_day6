@@ -3,6 +3,13 @@ pipeline {
 
     stages {
 
+        stage('Clone Repository') {
+            steps {
+                echo 'Cloning Terraform Repository...'
+                git branch: 'main', url: 'https://github.com/shreyaajahan/devops_day6.git'
+            }
+        }
+
         stage('Terraform') {
             steps {
                 echo 'Deploying...'
